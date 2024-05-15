@@ -150,4 +150,4 @@ initiad tx mstaking create-validator \
 > --pubkey $jalan command yang didalam tanda kurung lalu copy key nya(initiad tendermint show-validator) --identity "YOUR_KEYBASE_ID" (masukan keybase username kalian jika sudah register) --details "YOUR_DETAILS" (nama lengkapmu) --website "YOUR_WEBSITE_URL" (website bebas, mau isi link twitter juga gapapa
 
 
-#Done deh
+## Done deh
