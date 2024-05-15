@@ -104,6 +104,50 @@ source $HOME/.bash_profile
 ```
 ## cek block
 ```
-initiad status 2>&1 | jq .SyncInfo
+initiad status 2>&1 | jq .sync_info
 ```
 > Note: Jika null atau error tunggu saja sampe berhasil, seperti contoh dibawah
+```
+{
+  "latest_block_hash": "SENSOR BANG",
+  "latest_app_hash": "SENSOR BANG",
+  "latest_block_height": "57830",
+  "latest_block_time": "2024-05-12T07:58:43.384851973Z",
+  "earliest_block_hash": "SENSOR BANG",
+  "earliest_app_hash": "SENSOR BANG",
+  "earliest_block_height": "1",
+  "earliest_block_time": "2024-05-10T07:00:00Z",
+  "catching_up": true
+}
+```
+## Jika sudah, next create wallet
+```
+initiad keys add (yourname)
+```
+## Backup pharsemu
+```
+initiad keys mnemonic
+```
+## Jalankan Validator
+```
+initiad tx mstaking create-validator \
+--amount 1000000uinit \
+--pubkey $(initiad tendermint show-validator) \
+--moniker "YOUR_MONIKER_NAME" \
+--identity "YOUR_KEYBASE_ID" \
+--details "YOUR_DETAILS" \
+--website "YOUR_WEBSITE_URL" \
+--chain-id initiation-1 \
+--commission-rate 0.05 \
+--commission-max-rate 0.20 \
+--commission-max-change-rate 0.05 \
+--from wallet \
+--gas-adjustment 1.4 \
+--gas auto \
+--gas-prices 0.15uinit \
+-y
+```
+> --pubkey $jalan command yang didalam tanda kurung lalu copy key nya(initiad tendermint show-validator) --identity "YOUR_KEYBASE_ID" (masukan keybase username kalian jika sudah register) --details "YOUR_DETAILS" (nama lengkapmu) --website "YOUR_WEBSITE_URL" (website bebas, mau isi link twitter juga gapapa
+
+
+#Done deh
