@@ -98,6 +98,12 @@ WantedBy=multi-user.target
 EOF
 ```
 > Note : use command which initia untuk melihat folder initia, lalu pastekan ke ExecStart=kesini path nya
+## Register Service
+```
+sudo systemctl daemon-reload && \
+sudo systemctl enable initiad && \
+sudo systemctl start initiad && sudo journalctl -fu initiad -o cat
+```
 ## Post Installation
 ```
 source $HOME/.bash_profile
@@ -117,7 +123,7 @@ initiad status 2>&1 | jq .sync_info
   "earliest_app_hash": "SENSOR BANG",
   "earliest_block_height": "1",
   "earliest_block_time": "2024-05-10T07:00:00Z",
-  "catching_up": true
+  "catching_up": false # jika catching up nya true maka harus menunggu sampe false
 }
 ```
 ## Jika sudah, next create wallet
